@@ -126,7 +126,7 @@ public class ModuleInfo implements Serializable {
         if (tokens.contains("module")) {
             moduleName = tokens.get(tokens.size() - 1);
         }
-        if (tokens.size() > 1 && tokens.get(0).equals("requires")) {
+        if (tokens.size() > 1 && "requires".equals(tokens.get(0))) {
             if (tokens.size() > 3 && tokens.contains("static") && tokens.contains("transitive")) {
                 requiresStaticTransitive.add(tokens.get(3));
             } else if (tokens.size() > 2 && tokens.contains("transitive")) {

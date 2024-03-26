@@ -144,7 +144,7 @@ public abstract class ModulePathAnalysis extends DefaultTask {
             ComponentIdentifier id = result.getId().getComponentIdentifier();
             File resultFile = result.getFile();
 
-            if (!resultFile.getName().endsWith(".jar") && !resultFile.getName().equals("classes")) {
+            if (!resultFile.getName().endsWith(".jar") && !"classes".equals(resultFile.getName())) {
                 // Not an artifact with Java classes (e.g. resources folder of local project)
                 continue;
             }
